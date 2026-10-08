@@ -1,0 +1,10 @@
+# Python environments and bytecode
+.venv/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Keep large source data out of Git
+data/raw/*.csv
