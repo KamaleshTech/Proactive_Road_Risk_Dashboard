@@ -1,0 +1,20 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Large Datasets
+data/*.csv
+data/raw/*.csv
+*.csv.zip
+*.archive
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
