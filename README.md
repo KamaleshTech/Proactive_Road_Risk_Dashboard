@@ -24,10 +24,15 @@ An explainable road-safety analytics prototype using the US Accidents (2016–Ma
 ├── tests/
 │   └── test_analytics.py
 ├── requirements.txt
+├── requirements-notebook.txt
 ├── runtime.txt
+├── tests/
+│   └── test_analytics.py
+├── .github/workflows/tests.yml
+├── data/raw/README.md
+├── notebooks/01_data_audit.ipynb
 ├── .gitignore
-└── docs/
-    └── DATA_AUDIT.md
+└── docs/DATA_AUDIT.md
 ```
 
 ## Run locally (Windows PowerShell)
@@ -51,17 +56,17 @@ Open the local URL printed by Streamlit, usually `http://localhost:8501`.
 
 ## Dataset
 
-The original audit refers to `US_Accidents_March23.csv` (7,728,394 rows and 46 columns). The raw dataset is not included in this repository and should not be committed to Git because of its size and licensing/source considerations. Download it from the dataset provider and upload it in the app, or use the built-in sample data for a lightweight demo.
+The original audit refers to `US_Accidents_March23.csv` (7,728,394 rows and 46 columns). The raw dataset is not included in this repository and should not be committed to Git because of its size and licensing/source considerations. See `data/raw/README.md` for dataset placement notes; upload the CSV in the app, or use the built-in sample data for a lightweight demo.
 
 The dashboard accepts CSVs containing fields from the US Accidents dataset, including `Start_Time`, `Start_Lat`, `Start_Lng`, `State`, `Severity`, `Weather_Condition`, and road-context flags. Missing optional fields are handled with documented fallbacks. The full CSV may be too large for a free cloud instance; make a smaller representative sample for demo use.
 
 ## Deploy to Streamlit Community Cloud
 
-1. Push this branch to GitHub and open a pull request to `main` after reviewing the code and tests.
-2. Once merged, go to [Streamlit Community Cloud](https://share.streamlit.io/) and connect the GitHub repository.
-3. Select the repository's default branch (`kanish/data-audit`), app file `app.py`, then deploy.
-4. Use the built-in sample for the first live smoke test; upload a small CSV only after the dashboard loads.
-5. Check the app's deployment logs and test filters, charts, download, and data-quality warnings.
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/) and sign in using GitHub.
+2. Click **Create app**, choose **Yup, I have an app**, and select repository `KamaleshTech/Proactive_Road_Risk_Dashboard`.
+3. Select branch `kanish/data-audit` (the current repository default branch), set the app file to `app.py`, and choose Python 3.12 in Advanced settings if shown.
+4. Click **Deploy**. Use the built-in sample for the first smoke test; upload a small CSV only after the dashboard loads.
+5. Open the generated public URL and verify filters, charts, the geographic map, CSV download, and data-quality warnings. Check the Community Cloud logs if deployment fails.
 
 Do not claim deployment is complete until a public URL has been opened and smoke-tested.
 
