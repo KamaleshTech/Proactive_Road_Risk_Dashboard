@@ -54,13 +54,12 @@ st.markdown(
 with st.sidebar:
     st.header("Data source")
     upload = st.file_uploader("Upload accident records (CSV)", type=["csv"])
-    use_demo = st.toggle("Use built-in demo sample", value=upload is None)
-    st.caption("The sample is synthetic and only intended to verify the interface. Upload a compatible historical CSV for data analysis.")
+    st.caption("The sample is synthetic and only intended to verify the interface. Upload a compatible historical CSV to analyse it.")
     st.divider()
     st.header("Filters")
 
 try:
-    if upload is not None and not use_demo:
+    if upload is not None:
         raw = pd.read_csv(upload, low_memory=False)
         source_label = f"Uploaded file: {upload.name}"
         is_demo = False
