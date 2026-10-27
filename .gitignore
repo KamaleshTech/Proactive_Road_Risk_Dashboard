@@ -18,3 +18,8 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Test and deployment artifacts
+.pytest_cache/
+.streamlit/secrets.toml
+.DS_Store
