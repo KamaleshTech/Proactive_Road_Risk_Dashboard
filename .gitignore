@@ -1,25 +1,27 @@
-# Virtual Environment
+# Python
 .venv/
-venv/
-env/
-
-# Large Datasets
-data/*.csv
-data/raw/*.csv
-*.csv.zip
-*.archive
-
-# Python cache
 __pycache__/
 *.py[cod]
-*$py.class
-*.ipynb_checkpoints/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Test and deployment artifacts
 .pytest_cache/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Keep source CSVs and local SQLite databases out of Git
+data/raw/*.csv
+data/*.db
+*.sqlite
+*.sqlite3
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.production.local
+
+# Secrets and OS files
 .streamlit/secrets.toml
 .DS_Store
+Thumbs.db
